@@ -39,7 +39,7 @@ Isso deve bastar para que o cliente `docker` faça requisições ao daemon `dock
 
     docker-compose up
 
-Se tudo der certo, a instanciação dos containers descritos em [docker-compose.yml]{docker-compose.yml} deve ser observada na linha de comando. Observe que o processo/terminal onde foi executado o último comando ficará inutilizado, pois estará hospedando os serviços instanciados (derrubar o processo significa também derrubar os serviços).
+Se tudo der certo, a instanciação dos containers descritos em [docker-compose.yml](docker-compose.yml) deve ser observada na linha de comando. Observe que o processo/terminal onde foi executado o último comando ficará inutilizado, pois estará hospedando os serviços instanciados (derrubar o processo significa também derrubar os serviços).
 
 
 ### Windows
@@ -47,7 +47,7 @@ Após baixar e instalar o Docker Desktop, é necessário rodar o Docker Desktop 
 
     docker-compose up
 
-Em um terminal que esteja no diretório onde está o arquivo [docker-compose.yml]{docker-compose.yml}
+Em um terminal que esteja no diretório onde está o arquivo [docker-compose.yml](docker-compose.yml)
 
 ### Observação
 Durante a instanciação dos containers podem haver problemas com as portas selecionadas para uso. Possivelmente, serviços no anfitrião (no seu sistema operacional) já estarão usando as portas designadas aos containers. Será necessário encontrar e derrubar esses serviços.
