@@ -35,7 +35,7 @@ Resta inicializar o daemon `dockerd` que ouvirá as chamadas de API do cliente. 
     sudo systemctl start docker.socket // inicializa o socket responsável pelo daemon dockerd imediatamente
     sudo systemctl enable docker.socket // garante que o socket será inicializado automaticamente durante o boot
 
-Isso deve bastar para que o cliente `docker` faça requisições ao daemon `dockerd`. Teste subindo os containers
+Isso deve bastar para que o cliente `docker` faça requisições ao daemon `dockerd`. Teste subindo os containers (rode o seguinte comando em uma pasta contendo o arquivo [docker-compose.yml](docker-compose.yml), como por exemplo a root deste repositório).
 
     docker-compose up
 
@@ -47,7 +47,7 @@ Após baixar e instalar o Docker Desktop, é necessário rodar o Docker Desktop 
 
     docker-compose up
 
-Em um terminal que esteja no diretório onde está o arquivo [docker-compose.yml](docker-compose.yml)
+Em um terminal que esteja no diretório onde está o arquivo [docker-compose.yml](docker-compose.yml).
 
 ### Observação
 Durante a instanciação dos containers podem haver problemas com as portas selecionadas para uso. Possivelmente, serviços no anfitrião (no seu sistema operacional) já estarão usando as portas designadas aos containers. Será necessário encontrar e derrubar esses serviços.
@@ -56,4 +56,8 @@ Durante a instanciação dos containers podem haver problemas com as portas sele
 - Linux via `sudo systemctl stop nome_servico` (sugere-se inclusive `sudo systemctl disable nome_servico` para impedir que retornem à cada reinicialização do sistema, incorrendo no conflito de portas novamente).
 
 ## Desenvolvimento
+
+Para começar o desenvolvimento, clone este repositório para sua máquina local via `git`
+
+    git clone https://github.com:boasgsv/Lobici
 
