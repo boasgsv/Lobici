@@ -7,3 +7,19 @@ services:
     ports:
       - '8082:8080'
 
+  db:
+    image: 'mysql:8.0.21'
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_DATABASE: "Livraria"
+    volumes:
+      - mysqldata:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+volumes:
+  mysqldata: {}
+
+        
