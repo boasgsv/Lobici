@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: 'tomcat:9.0.38'
+    volumes:
+      - ./target/Lobici.war:/usr/local/tomcat/webapps/Lobici.war
+    ports:
+      - '8082:8080'
+
