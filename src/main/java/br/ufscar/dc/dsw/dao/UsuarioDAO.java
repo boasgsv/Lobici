@@ -1,4 +1,4 @@
 package br.ufscar.dc.dsw.dao;
 
-public class UsuarioDAO {
+public class UsuarioDAO extends GenericDAO {
 }
