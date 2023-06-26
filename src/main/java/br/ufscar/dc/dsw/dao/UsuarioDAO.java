@@ -1,2 +1,4 @@
-package br.ufscar.dc.dsw.dao;public class UsuarioDAO {
+package br.ufscar.dc.dsw.dao;
+
+public class UsuarioDAO {
 }
