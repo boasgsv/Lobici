@@ -1,2 +1,4 @@
-package br.ufscar.dc.dsw.domain;public class Usuario {
+package br.ufscar.dc.dsw.domain;
+
+public class Usuario {
 }

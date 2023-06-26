@@ -1,2 +1,4 @@
-package br.ufscar.dc.dsw.domain;public class Locadora {
+package br.ufscar.dc.dsw.domain;
+
+public class Locadora {
 }
