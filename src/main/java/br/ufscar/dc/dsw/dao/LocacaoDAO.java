@@ -41,7 +41,7 @@ public class LocacaoDAO extends GenericDAO {
         return locacoes;
     }
 
-    public ArrayList<Locacao> readAllByLocadora(int locadoraId) throws SQLException
+    public ArrayList<Locacao> readAllByLocadora(int locadoraId) throws RuntimeException
     {
         ArrayList<Locacao> locacoes = new ArrayList<>();
         String sql = "SELECT * FROM locacao WHERE locadora_id = ?";
