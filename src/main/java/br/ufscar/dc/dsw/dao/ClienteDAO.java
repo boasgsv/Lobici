@@ -28,11 +28,12 @@ public class ClienteDAO extends GenericDAO {
             stmt.setDate(6, dataSql);
     
             stmt.executeUpdate();
+            stmt.close();
+            conexao.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    
 
     public Cliente buscarClientePorId(Long id) {
         String query = "SELECT * FROM cliente WHERE usuario_id = ?";

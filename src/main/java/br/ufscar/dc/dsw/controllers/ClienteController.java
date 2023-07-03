@@ -112,7 +112,7 @@ public class ClienteController extends HttpServlet {
     
         response.sendRedirect("listar");
     }
-    
+
 
     private void atualizarCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");

@@ -11,6 +11,8 @@
 <body>
     <div align="center">
         <h1>Listagem de Clientes</h1>
+        <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+        <h2><a href="${contextPath}/clientes/cadastro">Adicionar Clientes</a></h2>
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -21,7 +23,6 @@
                 <th>Data de Nascimento</th>
                 <th>Ações</th>
             </tr>
-            <c:set var="contextPath" value="${pageContext.request.contextPath}" />
             <c:forEach var="cliente" items="${requestScope.listaClientes}">
                 <tr>
                     <td>${cliente.id}</td>

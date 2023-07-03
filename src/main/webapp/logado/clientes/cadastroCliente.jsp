@@ -36,8 +36,8 @@
         <td><label for="sexo">Sexo</label></td>
         <td>
             <select id="sexo" name="sexo">
-                <option value="Masculino" ${cliente.sexo == 'Masculino' ? 'selected' : ''}>Masculino</option>
-                <option value="Feminino" ${cliente.sexo == 'Feminino' ? 'selected' : ''}>Feminino</option>
+                <option value="M" ${cliente.sexo == 'M' ? 'selected' : ''}>Masculino</option>
+                <option value="F" ${cliente.sexo == 'F' ? 'selected' : ''}>Feminino</option>
             </select>
         </td>
     </tr>
@@ -46,6 +46,6 @@
         <td><input type="date" id="data_nascimento" name="data_nascimento" required value="${cliente.dataNascimento}" /></td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><input type="submit" value="Salva" /></td>
+        <td colspan="2" align="center"><input type="submit" value="Salvar" /></td>
     </tr>
 </table>
