@@ -20,48 +20,19 @@
 			</h1>
 			<h2>
 			    <a href="/<%=contextPath%>/locadoras"> 
-			    	<fmt:message key="rental.entity" />
+			    	<fmt:message key="rental.crud" />
 				</a> 
 				&nbsp;&nbsp;&nbsp;
+				<a href="/<%=contextPath%>/clientes"> 
+					<fmt:message key="users.crud" />
+				</a> 
+				<br/>
+				<br/>
 				<a href="${pageContext.request.contextPath}/logout.jsp">
 					<fmt:message key="exit.link" />
 				</a>
-				<br/>
-				<br/>
-				<a href="/<%=contextPath%>/usuarios/cadastro"> 
-					<fmt:message key="users.create" />
-				</a> 
 			</h2>
-			<h3><fmt:message key="users.list" /></h3>
 			<br/>
-		</div>
-		<div align="center">
-			<table border="1">
-				<tr>
-					<th><fmt:message key="user.ID" /></th>
-					<th><fmt:message key="user.email" /></th>
-					<th><fmt:message key="user.password" /></th>
-					<th><fmt:message key="actions.link" /></th>
-				</tr>
-				<c:forEach var="usuario" items="${requestScope.listaUsuarios}">
-					<tr>
-						<td><c:out value="${usuario.id}" /></td>
-						<td><c:out value="${usuario.email}" /></td>
-						<td><c:out value="${usuario.senha}" /></td>
-						<td><a
-							href="/<%= contextPath %>/usuarios/edicao?id=<c:out value='${usuario.id}' />">
-								<fmt:message key="users.update" />
-						</a> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a
-									href="/<%= contextPath %>/usuarios/remocao?id=<c:out value='${usuario.id}' />"
-									onclick="return confirm('<fmt:message key="confirm.link" />');">
-									<fmt:message key="users.delete" />
-								</a>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
 		</div>
 	</body>
 </fmt:bundle>

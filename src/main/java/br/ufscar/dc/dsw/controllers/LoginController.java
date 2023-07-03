@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
                             response.sendRedirect("locacoes/"); // locações na locadora
                         } else { // se é admin
 							// tem que incluir os dados de usuário e ter a opção de também redirecionar para locadoras no view
-                            response.sendRedirect("clientes/");  
+                            response.sendRedirect("usuarios/");  
 						}
 						return;
 					} else {
@@ -66,7 +66,7 @@ public class LoginController extends HttpServlet {
 
 		request.setAttribute("mensagens", erros);
 
-		String URL = "/login.jsp";
+		String URL = "/login_form.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(URL);
 		rd.forward(request, response);
 	}
