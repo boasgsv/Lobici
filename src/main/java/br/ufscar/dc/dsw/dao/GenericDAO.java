@@ -16,7 +16,7 @@ public class GenericDAO {
 
     protected Connection getConnection() throws SQLException {
         /* Conexão banco de dados MySQL */
-        String url = "jdbc:mysql://localhost:3306/Lobici";
+        String url = "jdbc:mysql://lobici-db-1:3306/Lobici";
         return DriverManager.getConnection(url, "user", "password");
     }
 }
