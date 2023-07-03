@@ -11,7 +11,7 @@
         <link href="${pageContext.request.contextPath}/layout.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1><fmt:message key="page.label" /></h1>
+        <h1><fmt:message key="user.label" /></h1>
         <c:if test="${mensagens.existeErros}">
             <div id="erro">
                 <ul>

@@ -16,7 +16,7 @@
 		%>
 		<div align="center">
 			<h1>
-				<fmt:message key="users.welcome" />
+				<fmt:message key="admin.welcome" />
 			</h1>
 			<h2>
 			    <a href="/<%=contextPath%>/locadoras"> 
@@ -24,7 +24,7 @@
 				</a> 
 				&nbsp;&nbsp;&nbsp;
 				<a href="/<%=contextPath%>/clientes"> 
-					<fmt:message key="users.crud" />
+					<fmt:message key="client.crud" />
 				</a> 
 				<br/>
 				<br/>
