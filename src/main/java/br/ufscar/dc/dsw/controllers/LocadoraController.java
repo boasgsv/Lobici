@@ -73,7 +73,7 @@ public class LocadoraController extends HttpServlet {
     }
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/locadoras/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/locadoras/formulario.jsp");
         dispatcher.forward(request, response);
     }
     private void apresentaFormEdicao(HttpServletRequest request, HttpServletResponse response)
@@ -81,7 +81,7 @@ public class LocadoraController extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         Locadora locadora = dao.get(id);
         request.setAttribute("locadora", locadora);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/locadoras/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/locadoras/formulario.jsp");
         dispatcher.forward(request, response);
     }
     private void insere(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -147,7 +147,7 @@ public class LocadoraController extends HttpServlet {
         List<Locadora> listaLocadoras = dao.getAll();
         request.setAttribute("listaLocadoras", listaLocadoras);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/locadoras/listar.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/locadoras/listar.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -156,7 +156,7 @@ public class LocadoraController extends HttpServlet {
         Locadora locadora = dao.get(id);
         request.setAttribute("locadora", locadora);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/locadoras/detalhes.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/locadoras/detalhes.jsp");
         dispatcher.forward(request, response);
     }
 }

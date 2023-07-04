@@ -78,7 +78,7 @@ public class ClienteController extends HttpServlet {
     }
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/clientes/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/clientes/formulario.jsp");
         dispatcher.forward(request, response);
     }
     private void apresentaFormEdicao(HttpServletRequest request, HttpServletResponse response)
@@ -86,7 +86,7 @@ public class ClienteController extends HttpServlet {
         Long id = Long.parseLong(request.getParameter("id"));
         Cliente cliente = dao.buscarClientePorId(id);
         request.setAttribute("cliente", cliente);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/clientes/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/clientes/formulario.jsp");
         dispatcher.forward(request, response);
     }
     private void insere(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -174,7 +174,7 @@ public class ClienteController extends HttpServlet {
         List<Cliente> listaClientes = dao.listarClientes();
         request.setAttribute("listaClientes", listaClientes);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/clientes/listar.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/clientes/listar.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -183,7 +183,7 @@ public class ClienteController extends HttpServlet {
         Cliente cliente = dao.buscarClientePorId(id);
         request.setAttribute("cliente", cliente);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/clientes/detalhes.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/logado/admin/clientes/detalhes.jsp");
         dispatcher.forward(request, response);
     }
 }
