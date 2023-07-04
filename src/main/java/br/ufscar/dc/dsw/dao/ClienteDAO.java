@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ClienteDAO extends GenericDAO {
     public Cliente find(long userId) {
-        return null;
+        return buscarClientePorId(userId);
     }
 
     public void adicionarCliente(Cliente cliente) {
