@@ -20,7 +20,7 @@
         <td><label for="email"><fmt:message key="user.email" /></label></td>
         <td><input type="text" id="email" name="email" size="11" required value="" /></td>
     </tr>
-    <tr>w
+    <tr>
         <td><label for="senha"><fmt:message key="user.password" /></label></td>
         <td><input type="text" id="senha" name="senha" size="11" required value="" /></td>
     </tr>
