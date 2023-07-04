@@ -14,33 +14,66 @@
 </head>
 <body>
 <h>
+
+
+<c:choose>
+    <c:when test="${sessionScope.user_id == null}">
     <table>
         <tr>
-
-            <c:choose>
-                <c:when test="${sessionScope.user_id == null}">
-                    <td>
-                        <a href="login">Login</a>
-                    </td>
-                </c:when>
-                <c:when test="${sessionScope.user_type == \"admin\"}">
-                    <td>
-                        <a href="clientes">CRUD Clientes</a>
-                    </td>
-                    <td>
-                        <a href="locadoras">CRUD Locadoras</a>
-                    </td>
-
-                    <td>
-                        <a href="logout">Logout</a>
-                    </td>
-                </c:when>
-            </c:choose>
+            <td>
+                <a href="login">Login</a>
+            </td>
         </tr>
         <tr>
             <%@include file="deslogado/listar.jsp"%>
         </tr>
     </table>
+    </c:when>
+    <c:when test="${sessionScope.user_type == \"admin\"}">
+    <table>
+        <tr>
+            <td>
+                <a href="clientes">CRUD Clientes</a>
+            </td>
+            <td>
+                <a href="locadoras">CRUD Locadoras</a>
+            </td>
+
+            <td>
+                <a href="logout">Logout</a>
+            </td>
+        </tr>
+    </table>
+    </c:when>
+    <c:when test="${sessionScope.user_type == \"cliente\"}">
+    <table>
+        <tr>
+            <td>
+                <a href="locacoes">Locacoes</a>
+            </td>
+            <td>
+                <a href="logout">Logout</a>
+            </td>
+        </tr>
+
+        <tr>
+            <%@include file="logado/cliente/listar.jsp"%>
+        </tr>
+    </table>
+    </c:when>
+    <c:when test="${sessionScope.user_type == \"locadora\"}">
+    <table>
+        <tr>
+            <td>
+                <a href="locacoes">Locacoes</a>
+            </td>
+            <td>
+                <a href="logout">Logout</a>
+            </td>
+        </tr>
+    </table>
+    </c:when>
+</c:choose>
 </h>
 </body>
 </html>

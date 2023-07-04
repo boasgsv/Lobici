@@ -24,7 +24,7 @@
 			value="<c:out value='${usuario.email}' />" /></td>
 	</tr>
 	<tr>
-		<td><label for="senha"><fmt:message key="user.password" />
+		<td><label for="senha"><fmt:message key="user.senha" />
 		</label></td>
 		<td><input type="text" name="senha" size="20" required
 			value="<c:out value='${usuario.senha}' />" /></td>
