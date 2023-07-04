@@ -162,6 +162,11 @@ public class ClienteController extends HttpServlet {
         Long id = Long.parseLong(request.getParameter("id"));
         dao.excluirLocacoesPorCliente(id);
         dao.delete(id);
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuario = new Usuario(id);
+        usuarioDAO.delete(usuario);
+
         response.sendRedirect("listar");
     }
 
