@@ -28,7 +28,7 @@
                         <a href="clientes">CRUD Clientes</a>
                     </td>
                     <td>
-                        <a href="clientes">CRUD Locadoras</a>
+                        <a href="locadoras">CRUD Locadoras</a>
                     </td>
                     <td>
                         <a href="clientes"></a>
