@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class GenericDAO {
+public abstract class GenericDAO {
     public GenericDAO(){
         try {
             /* Setup Banco de dados MySQL */
