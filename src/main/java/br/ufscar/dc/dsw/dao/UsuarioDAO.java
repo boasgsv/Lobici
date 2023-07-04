@@ -14,7 +14,7 @@ public class UsuarioDAO extends GenericDAO {
 
     public void insert(Usuario usuario) {
 
-        String sql = "INSERT INTO Usuario (email, senha) VALUES (?, ?)";
+        String sql = "INSERT INTO usuario (email, senha) VALUES (?, ?)";
 
         try {
             Connection conn = this.getConnection();
@@ -36,7 +36,7 @@ public class UsuarioDAO extends GenericDAO {
 
         List<Usuario> listaUsuarios = new ArrayList<>();
 
-        String sql = "SELECT * from Usuario";
+        String sql = "SELECT * from usuario";
 
         try {
             Connection conn = this.getConnection();
@@ -61,7 +61,7 @@ public class UsuarioDAO extends GenericDAO {
     }
 
     public void delete(Usuario usuario) {
-        String sql = "DELETE FROM Usuario where id = ?";
+        String sql = "DELETE FROM usuario where id = ?";
 
         try {
             Connection conn = this.getConnection();
@@ -77,7 +77,7 @@ public class UsuarioDAO extends GenericDAO {
     }
 
     public void update(Usuario usuario) {
-        String sql = "UPDATE Usuario SET email = ?, senha = ? WHERE id = ?";
+        String sql = "UPDATE usuario SET email = ?, senha = ? WHERE id = ?";
 
         try {
             Connection conn = this.getConnection();
@@ -98,7 +98,7 @@ public class UsuarioDAO extends GenericDAO {
     public Usuario get(Long id) {
         Usuario usuario = null;
 
-        String sql = "SELECT * from Usuario WHERE id = ?";
+        String sql = "SELECT * from usuario WHERE id = ?";
 
         try {
             Connection conn = this.getConnection();
@@ -125,7 +125,7 @@ public class UsuarioDAO extends GenericDAO {
     public Usuario find(String email) {
         Usuario usuario = null;
 
-        String sql = "SELECT * from Usuario WHERE email = ?";
+        String sql = "SELECT * from usuario WHERE email = ?";
 
         try {
             Connection conn = this.getConnection();
