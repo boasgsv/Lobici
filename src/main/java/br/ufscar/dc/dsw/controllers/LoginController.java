@@ -17,7 +17,7 @@ import br.ufscar.dc.dsw.domain.Locadora;
 import br.ufscar.dc.dsw.domain.Usuario;
 import br.ufscar.dc.dsw.util.Erro;
 
-@WebServlet(name = "Login", urlPatterns = { "/login.jsp"})
+@WebServlet(name = "Login", urlPatterns = { "/login"})
 public class LoginController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
