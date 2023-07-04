@@ -127,7 +127,10 @@ public class ClienteController extends HttpServlet {
 
     private void atualizarCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        Long id = Long.parseLong(request.getParameter("id_usuario"));
+        Long id = Long.parseLong(request.getParameter("id"));
+
+        String email = request.getParameter("email");
+        String senha = request.getParameter("senha");
         String CPF = request.getParameter("CPF");
         String nome = request.getParameter("nome");
         String telefone = request.getParameter("telefone");
@@ -137,8 +140,12 @@ public class ClienteController extends HttpServlet {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date data = sdf.parse(dataNascimento);
+
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            Usuario usuario = new Usuario(id, email, senha);
+            usuarioDAO.update(usuario);
     
-            Cliente clienteAtualizado = new Cliente(id,CPF, nome, telefone, sexo, data);
+            Cliente clienteAtualizado = new Cliente(id, CPF, nome, telefone, sexo, data);
     
             dao.atualizarCliente(clienteAtualizado);
             response.sendRedirect(request.getContextPath() + "/clientes/listar");

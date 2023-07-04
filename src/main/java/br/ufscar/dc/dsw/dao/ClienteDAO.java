@@ -99,16 +99,19 @@ public class ClienteDAO extends GenericDAO {
     }
 
     public void atualizarCliente(Cliente clienteAtualizado) {
-        String query = "UPDATE cliente SET nome = ?, telefone = ?, sexo = ?, data_nascimento = ? WHERE CPF = ?";
+        String query = "UPDATE cliente SET nome = ?, telefone = ?, sexo = ?, data_nascimento = ?, CPF = ? WHERE usuario_id = ?";
     
-        try (Connection conexao = getConnection();
-             PreparedStatement stmt = conexao.prepareStatement(query)) {
+        try {
+            Connection conexao = getConnection();
+            PreparedStatement stmt = conexao.prepareStatement(query);
+
             stmt.setString(1, clienteAtualizado.getNome());
             stmt.setString(2, clienteAtualizado.getTelefone());
             stmt.setString(3, clienteAtualizado.getSexo());
             stmt.setDate(4, new java.sql.Date(clienteAtualizado.getDataNascimento().getTime()));
             stmt.setString(5, clienteAtualizado.getCPF());
-    
+            stmt.setLong(6, clienteAtualizado.getId());
+
             stmt.executeUpdate();
             stmt.close();
             conexao.close();
