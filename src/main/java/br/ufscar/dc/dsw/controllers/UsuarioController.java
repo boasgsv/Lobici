@@ -1,3 +1,5 @@
+/*
+
 package br.ufscar.dc.dsw.controllers;
 
 import java.io.IOException;
@@ -42,10 +44,13 @@ public class UsuarioController extends HttpServlet {
 
 		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
 		Erro erros = new Erro();
-		ClienteDAO clientedao = new ClienteDAO();
-		Cliente cliente = clientedao.find(usuario.getId());
-		LocadoraDAO locadoradao = new LocadoraDAO();
-		Locadora locadora = locadoradao.find(usuario.getId());
+	    //ClienteDAO clientedao = new ClienteDAO();
+	    //Cliente cliente = clientedao.find(usuario.getId());
+	    //LocadoraDAO locadoradao = new LocadoraDAO();
+	    //Locadora locadora = locadoradao.find(usuario.getId());
+
+        Cliente cliente = null;
+        Locadora locadora = null;
 
 		if (usuario == null) {
 			response.sendRedirect(request.getContextPath());
@@ -146,3 +151,5 @@ public class UsuarioController extends HttpServlet {
 		response.sendRedirect("lista");
 	}
 }
+
+*/
