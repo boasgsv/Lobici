@@ -29,7 +29,7 @@
                                value="${param.email}"/></td>
                 </tr>
                 <tr>
-                    <th><fmt:message key="user.password" />:</th>
+                    <th><fmt:message key="user.senha" />:</th>
                     <td><input type="password" name="senha" /></td>
                 </tr>
                 <tr>
