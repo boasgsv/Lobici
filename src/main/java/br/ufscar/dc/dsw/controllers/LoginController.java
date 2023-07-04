@@ -41,7 +41,7 @@ public class LoginController extends HttpServlet {
 					if (usuario.getSenha().equalsIgnoreCase(senha)) {
 						long userId = usuario.getId();
 						request.getSession().setAttribute("user_id", userId);
-                        response.sendRedirect("home/");
+                        response.sendRedirect("/Lobici");
 						return;
 					} else {
 						erros.add("Senha inválida!");
