@@ -4,7 +4,8 @@ CREATE TABLE usuario (
     id INT AUTO_INCREMENT,
     email VARCHAR(100),
     senha VARCHAR(20),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    UNIQUE (email)
 );
 
 CREATE TABLE cliente (
