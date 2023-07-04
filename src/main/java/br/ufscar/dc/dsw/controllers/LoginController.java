@@ -39,7 +39,8 @@ public class LoginController extends HttpServlet {
 				Usuario usuario = dao.find(email);
 				if (usuario != null) {
 					if (usuario.getSenha().equalsIgnoreCase(senha)) {
-						request.getSession().setAttribute("usuarioLogado", usuario);
+						long userId = usuario.getId();
+						request.getSession().setAttribute("user_id", userId);
                         response.sendRedirect("home/");
 						return;
 					} else {
