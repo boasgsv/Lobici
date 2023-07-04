@@ -40,19 +40,7 @@ public class LoginController extends HttpServlet {
 				if (usuario != null) {
 					if (usuario.getSenha().equalsIgnoreCase(senha)) {
 						request.getSession().setAttribute("usuarioLogado", usuario);
-                        //response.sendRedirect("usuarios/");
-                        ClienteDAO clientedao = new ClienteDAO();
-                        Cliente cliente = clientedao.find(usuario.getId());
-                        LocadoraDAO locadoradao = new LocadoraDAO();
-                        Locadora locadora = locadoradao.find(usuario.getId()); 
-                        if (cliente != null) { // se é cliente
-                            response.sendRedirect("locacoes/"); // locações do cliente
-                        } else if(locadora != null){ // se é locadora
-                            response.sendRedirect("locacoes/"); // locações na locadora
-                        } else { // se é admin
-							// tem que incluir os dados de usuário e ter a opção de também redirecionar para locadoras no view
-                            response.sendRedirect("usuarios/");  
-						}
+                        response.sendRedirect("home/");
 						return;
 					} else {
 						erros.add("Senha inválida!");
