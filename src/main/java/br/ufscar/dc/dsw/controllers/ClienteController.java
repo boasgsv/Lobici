@@ -1,7 +1,9 @@
 package br.ufscar.dc.dsw.controllers;
 
 import br.ufscar.dc.dsw.dao.ClienteDAO;
+import br.ufscar.dc.dsw.dao.UsuarioDAO;
 import br.ufscar.dc.dsw.domain.Cliente;
+import br.ufscar.dc.dsw.domain.Usuario;
 //import br.ufscar.dc.dsw.util.Erro;
 
 import java.io.IOException;
@@ -91,7 +93,7 @@ public class ClienteController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String senha = request.getParameter("senha");
 
         String CPF = request.getParameter("CPF");
         String nome = request.getParameter("nome");
@@ -109,6 +111,12 @@ public class ClienteController extends HttpServlet {
             // Tratamento de erro caso a data não esteja no formato esperado
             throw new ServletException("Erro ao converter data de nascimento", e);
         }
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuario = new Usuario(email, senha);
+        usuarioDAO.insert(usuario);
+        usuario = usuarioDAO.find(email);
+        long id = usuario.getId();
 
         Cliente cliente = new Cliente(id, CPF, nome, telefone, sexo, data);
         dao.adicionarCliente(cliente);
