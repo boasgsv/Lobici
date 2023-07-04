@@ -5,7 +5,7 @@
   Time: 7:55 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -30,14 +30,15 @@
                     <td>
                         <a href="locadoras">CRUD Locadoras</a>
                     </td>
-                    <td>
-                        <a href="clientes"></a>
-                    </td>
+
                     <td>
                         <a href="logout">Logout</a>
                     </td>
                 </c:when>
             </c:choose>
+        </tr>
+        <tr>
+            <%@include file="deslogado/listar.jsp"%>
         </tr>
     </table>
 </h>
