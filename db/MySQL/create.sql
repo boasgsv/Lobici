@@ -2,19 +2,19 @@ USE Lobici;
 
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT,
-    email VARCHAR(100),
-    senha VARCHAR(20),
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(20) NOT NULL,
     PRIMARY KEY (id),
     UNIQUE (email)
 );
 
 CREATE TABLE cliente (
     usuario_id INT,
-    cpf CHAR(11),
-    nome VARCHAR(50),
+    cpf CHAR(11) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
     telefone VARCHAR(20),
-    sexo CHAR(1),
-    data_nascimento DATE,
+    sexo CHAR(1) NOT NULL,
+    data_nascimento DATE NOT NULL,
     PRIMARY KEY (usuario_id),
     FOREIGN KEY(usuario_id) REFERENCES usuario(id),
     UNIQUE (cpf)
@@ -22,9 +22,9 @@ CREATE TABLE cliente (
 
 CREATE TABLE locadora (
     usuario_id INT,
-    cnpj CHAR(14),
-    nome VARCHAR(50),
-    cidade VARCHAR(20),
+    cnpj CHAR(14) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    cidade VARCHAR(20) NOT NULL,
     PRIMARY KEY (usuario_id),
     FOREIGN KEY(usuario_id) REFERENCES usuario(id),
     UNIQUE(cnpj)
@@ -32,9 +32,9 @@ CREATE TABLE locadora (
 
 CREATE TABLE locacao (
     id INT AUTO_INCREMENT,
-    locadora_id INT,
-    cliente_id INT,
-    datahora DATETIME,
+    locadora_id INT NOT NULL,
+    cliente_id INT NOT NULL,
+    datahora DATETIME NOT NULL,
     PRIMARY KEY(id),
     UNIQUE(locadora_id, datahora),
     UNIQUE(cliente_id,  datahora),
