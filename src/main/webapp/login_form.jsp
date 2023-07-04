@@ -21,7 +21,7 @@
                 </ul>
             </div>
         </c:if>
-        <form method="post" action="login.jsp">
+        <form method="post" action="login">
             <table>
                 <tr>
                     <th><fmt:message key="user.email" />:</th>
