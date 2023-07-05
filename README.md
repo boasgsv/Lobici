@@ -139,7 +139,7 @@ R4: <br />
 R5: <br />
     ( ) Implementado (X) Parcialmente implementado ( ) Não implementado <br />
     Divisão na implementação da funcionalidade: Gabriele (Controller, DAO, VIEWS e Integração), Marcos (login) <br />
-     - Observação: feature ainda quebrada na integração, requer outro release para estar funcional
+     - Observação: só não foi implementado o email
 
 R6: <br />
     (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
