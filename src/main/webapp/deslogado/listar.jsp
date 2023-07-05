@@ -11,6 +11,14 @@
 </head>
 
 <body>
+    <form action="${contextPath}/Lobici" method="get">
+        <select name="cidade" onchange="this.form.submit()">
+            <option value="" selected disabled><fmt:message key="rental.prompt_filter_city"/></option>
+            <c:forEach var="cidade" items="${requestScope.listaCidades}">
+                <option value="${cidade}">${cidade}</option>
+            </c:forEach>
+        </select>
+    </form>
     <div align="center">
         <h1>
             <table>
@@ -29,7 +37,7 @@
                 <th><fmt:message key="rental.cnpj" /></th>
                 <th><fmt:message key="rental.city" /></th>
             </tr>
-            <c:forEach var="locadora" items="${requestScope.listaLocadoras}" varStatus="status">
+            <c:forEach var="locadora" items="${requestScope.listaLocadorasSelecionadas}" varStatus="status">
                 <tr>
                     <td>${status.count}</td>
                     <td>${locadora.nome}</td>
