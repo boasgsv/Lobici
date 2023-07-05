@@ -64,6 +64,17 @@ Para começar o desenvolvimento, clone este repositório para sua máquina local
 
 ## Roteiro de Execução
 
+O setup supoe a execução de um container docker com a instância do mysql [docker-compose.yml](como aqui disponibilizado) de modo que a instância do container de banco de dados MySQL tenha o nome de lobici-db-1. Para isto, o mais simples é
+
+clonar o repositório
+
+     git clone https://github.com:boasgsv/Lobici
+
+ e executar docker-compose up
+
+     docker-compose up
+
+     
 ### SQL Scripts
 Para esse projeto, utilizamos o banco de dados MySQL. Os usuários que foram criados e populados são: <br />
 ~ Cliente (Capaz de logar no sistema e realizar uma locação de bicicleta em alguma das locadoras desejadas, pode também fazer uma consulta de todas as locações ja realizadas por esse cliente) <br />
