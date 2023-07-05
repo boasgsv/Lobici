@@ -63,8 +63,16 @@ Para começar o desenvolvimento, clone este repositório para sua máquina local
 
 ## Roteiro de Execução
 
-Para esse projeto, utilizamos o banco de dados MySQL. Os comandos utilizados para criação do banco foram os seguintes:
-USE Lobici;
+### SQL Scripts
+Para esse projeto, utilizamos o banco de dados MySQL. Os usuários que foram criados e populados são: <br />
+~ Cliente (Capaz de logar no sistema e realizar uma locação de bicicleta em alguma das locadoras desejadas, pode também fazer uma consulta de todas as locações ja realizadas por esse cliente) <br />
+
+~ Locadora (Capaz de logar no sistema e disponibilizar uma bicicleta para o cliente fazer uma locação, pode também fazer uma consulta de todas as locações ja realizadas por essa locadora) <br />
+
+~ Administrador (Caso seja usuário mas não seja cliente nem locadora, esse usuário será administrador, capaz de acessar o CRUD de locadora e cliente, capaz de listar todos os clientes e locadoras cadastrados no banco) <br />
+
+Os comandos utilizados para criação do banco foram os seguintes: <br />
+USE Lobici; <br />
 
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT,
@@ -106,3 +114,5 @@ CREATE TABLE locacao (
     FOREIGN KEY (locadora_id) REFERENCES locadora(usuario_id),
     FOREIGN KEY (cliente_id) REFERENCES cliente(usuario_id)
 );
+
+## Checklist e divisão de funcionalidades
