@@ -61,3 +61,99 @@ Para começar o desenvolvimento, clone este repositório para sua máquina local
 
     git clone https://github.com:boasgsv/Lobici
 
+
+## Roteiro de Execução
+
+### SQL Scripts
+Para esse projeto, utilizamos o banco de dados MySQL. Os usuários que foram criados e populados são: <br />
+~ Cliente (Capaz de logar no sistema e realizar uma locação de bicicleta em alguma das locadoras desejadas, pode também fazer uma consulta de todas as locações ja realizadas por esse cliente) <br />
+
+~ Locadora (Capaz de logar no sistema e disponibilizar uma bicicleta para o cliente fazer uma locação, pode também fazer uma consulta de todas as locações ja realizadas por essa locadora) <br />
+
+~ Administrador (Caso seja usuário mas não seja cliente nem locadora, esse usuário será administrador, capaz de acessar o CRUD de locadora e cliente, capaz de listar todos os clientes e locadoras cadastrados no banco) <br />
+
+Os comandos utilizados para criação do banco foram os seguintes: <br />
+
+USE Lobici; <br />
+
+CREATE TABLE usuario ( <br />
+    id INT AUTO_INCREMENT,<br />
+    email VARCHAR(100),<br />
+    senha VARCHAR(20),<br />
+    PRIMARY KEY (id)<br />
+);<br />
+
+CREATE TABLE cliente (<br />
+    usuario_id INT,<br />
+    cpf CHAR(11),<br />
+    nome VARCHAR(50),<br />
+    telefone VARCHAR(20),<br />
+    sexo CHAR(1),<br />
+    data_nascimento DATE,<br />
+    PRIMARY KEY (usuario_id),<br />
+    FOREIGN KEY(usuario_id) REFERENCES usuario(id),<br />
+    UNIQUE (cpf)<br />
+);<br />
+
+CREATE TABLE locadora (<br />
+    usuario_id INT,<br />
+    cnpj CHAR(14),<br />
+    nome VARCHAR(50),<br />
+    cidade VARCHAR(20),<br />
+    PRIMARY KEY (usuario_id),<br />
+    FOREIGN KEY(usuario_id) REFERENCES usuario(id),<br />
+    UNIQUE(cnpj)<br />
+);<br />
+
+CREATE TABLE locacao (<br />
+    id INT AUTO_INCREMENT,<br />
+    locadora_id INT,<br />
+    cliente_id INT,<br />
+    datahora DATETIME,<br />
+    PRIMARY KEY(id),<br />
+    UNIQUE(locadora_id, datahora),<br />
+    UNIQUE(cliente_id,  datahora),<br />
+    FOREIGN KEY (locadora_id) REFERENCES locadora(usuario_id),<br />
+    FOREIGN KEY (cliente_id) REFERENCES cliente(usuario_id)<br />
+);<br />
+
+## Checklist e divisão de funcionalidades
+
+R1: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Matheus (Controller, DAO e Views), Marcos e Gabriele (Login), Gabriele (Autorização e Integração) <br />
+
+R2: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Leandro (Controller, DAO e Views), Marcos (Login e CRUD interno de usuário), Gabriele (Autorização e Integração)<br />
+
+R3: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Leandro (DAO), Marcos (Login e CRUD interno de usuário), Gabriele (Controller, Views e Integração com Login)<br />
+
+R4: <br />
+    ( ) Implementado ( ) Parcialmente implementado (X) Não implementado <br />
+    Divisão na implementação da funcionalidade:  <br />
+    
+
+R5: <br />
+    ( ) Implementado (X) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (Controller, DAO, VIEWS e Integração), Marcos (login) <br />
+     - Observação: feature ainda quebrada na integração, requer outro release para estar funcional
+
+R6: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (Controller, Views, Integração com Login), Matheus(DAO) <br />
+
+R7: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Todos (banco de dados) <br />
+
+R8: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (Controller, Views, Intregração com Login), Leandro (DAO) <br />
+
+R9: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (33%), Matheus (33%), Marcos (33%) <br />
+
