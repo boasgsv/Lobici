@@ -64,7 +64,7 @@ Para começar o desenvolvimento, clone este repositório para sua máquina local
 
 ## Roteiro de Execução
 
-O setup supoe a execução de um container docker com a instância do mysql [docker-compose.yml](como aqui disponibilizado) de modo que a instância do container de banco de dados MySQL tenha o nome de lobici-db-1. Para isto, o mais simples é
+O setup supoe a execução de um container docker com a instância do mysql [como aqui disponibilizado](docker-compose.yml) de modo que a instância do container de banco de dados MySQL tenha o nome de lobici-db-1. Para isto, o mais simples é
 
 clonar o repositório
 
