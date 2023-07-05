@@ -61,6 +61,7 @@ Para começar o desenvolvimento, clone este repositório para sua máquina local
 
     git clone https://github.com:boasgsv/Lobici
 
+Isto é importante porque a classe [GenericDAO](src/main/java/br/ufscar/dc/dsw/dao/GenericDAO.java) utiliza o nome do container como url para se conectar ao banco de dados.
 
 ## Roteiro de Execução
 
