@@ -28,6 +28,7 @@
 
     </h1>
     <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+    <h2><a href="${contextPath}/locacoes/criar">Request Rent</a></h2>
 
     <table border="1">
       <tr>

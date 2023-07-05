@@ -57,7 +57,7 @@
         </tr>
 
         <tr>
-            <%@include file="logado/cliente/listar.jsp"%>
+            <%@include file="logado/cliente/solicitacao_de_aluguel.jsp"%>
         </tr>
     </table>
     </c:when>

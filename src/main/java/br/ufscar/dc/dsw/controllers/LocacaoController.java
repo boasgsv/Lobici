@@ -6,6 +6,7 @@ import br.ufscar.dc.dsw.dao.LocadoraDAO;
 import br.ufscar.dc.dsw.domain.Cliente;
 import br.ufscar.dc.dsw.domain.Locacao;
 import br.ufscar.dc.dsw.domain.Locadora;
+import br.ufscar.dc.dsw.util.Erro;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,8 +29,6 @@ public class LocacaoController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("ANBABASBDAS");
-
         doGet(req, resp);
     }
 
@@ -55,12 +54,32 @@ public class LocacaoController extends HttpServlet {
 
     }
 
-    private void criarLocacao(HttpServletRequest req, HttpServletResponse resp) {
-        long locadoraId = Long.parseLong(req.getParameter("locadora_id"));
-        long clienteId = Long.parseLong(req.getParameter("locadora_id"));
-        LocalDateTime ldt = LocalDateTime.parse(req.getParameter("datahora_locacao"));
-        locacaoDAO.insert(locadoraId, clienteId, ldt);
+    private void criarLocacao(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        try{
+            String userType = (String) req.getSession().getAttribute("user_type");
+            long locadoraId = Long.parseLong(req.getParameter("locadora_id"));
+            long clienteId = Long.parseLong(req.getParameter("cliente_id"));
+            LocalDateTime ldt = LocalDateTime.parse(req.getParameter("datahora_locacao"));
+            if (!"cliente".equals(userType)){
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                return;
+            }
 
+            Locacao locacao = locacaoDAO.findByClienteAndDateTime(clienteId, ldt);
+            Erro erro = new Erro();
+                if (locacao != null) {
+                    throw new RuntimeException("customer");
+                }
+                locacao = locacaoDAO.findByLocadoraAndDateTime(locadoraId, ldt);
+                if (locacao != null) {
+                    throw new RuntimeException("rental");
+                }
+            locacaoDAO.insert(clienteId, locadoraId, ldt);
+        } catch (Exception e) {
+            req.setAttribute("errorMessage", e.getMessage());
+            req.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(req, resp);
+        }
+        resp.sendRedirect("/Lobici");
     }
 
     private void listarLocacoes(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
