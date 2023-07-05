@@ -38,7 +38,7 @@
       </tr>
       <c:forEach var="i" begin="0" end="${locacoes.size() - 1}">
         <c:set var="locacao" value="${locacoes[i]}"/>
-        <c:set var="cliente" value="${locadoras[i]}"/>
+        <c:set var="cliente" value="${clientes[i]}"/>
         <tr>
           <td>${i + 1}</td>
           <td>${locacao.id}</td>
