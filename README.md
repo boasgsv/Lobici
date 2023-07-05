@@ -117,3 +117,39 @@ CREATE TABLE locacao (<br />
 );<br />
 
 ## Checklist e divisão de funcionalidades
+
+R1: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Matheus (100%) <br />
+
+R2: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Leandro (100%) <br />
+
+R3: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Leandro (100%) <br />
+
+R4: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (100%) <br />
+
+R5: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Marcos (100%) <br />
+
+R6: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (50%), Matheus(50%) <br />
+
+R7: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (50%), Marcos (50%) <br />
+
+R8: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (50%), Leandro (50%) <br />
+
+R9: <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade: Gabriele (33%), Matheus (33%), Marcos (33%) <br />
