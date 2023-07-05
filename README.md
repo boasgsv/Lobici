@@ -61,3 +61,48 @@ Para começar o desenvolvimento, clone este repositório para sua máquina local
 
     git clone https://github.com:boasgsv/Lobici
 
+## Roteiro de Execução
+
+Para esse projeto, utilizamos o banco de dados MySQL. Os comandos utilizados para criação do banco foram os seguintes:
+USE Lobici;
+
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT,
+    email VARCHAR(100),
+    senha VARCHAR(20),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE cliente (
+    usuario_id INT,
+    cpf CHAR(11),
+    nome VARCHAR(50),
+    telefone VARCHAR(20),
+    sexo CHAR(1),
+    data_nascimento DATE,
+    PRIMARY KEY (usuario_id),
+    FOREIGN KEY(usuario_id) REFERENCES usuario(id),
+    UNIQUE (cpf)
+);
+
+CREATE TABLE locadora (
+    usuario_id INT,
+    cnpj CHAR(14),
+    nome VARCHAR(50),
+    cidade VARCHAR(20),
+    PRIMARY KEY (usuario_id),
+    FOREIGN KEY(usuario_id) REFERENCES usuario(id),
+    UNIQUE(cnpj)
+);
+
+CREATE TABLE locacao (
+    id INT AUTO_INCREMENT,
+    locadora_id INT,
+    cliente_id INT,
+    datahora DATETIME,
+    PRIMARY KEY(id),
+    UNIQUE(locadora_id, datahora),
+    UNIQUE(cliente_id,  datahora),
+    FOREIGN KEY (locadora_id) REFERENCES locadora(usuario_id),
+    FOREIGN KEY (cliente_id) REFERENCES cliente(usuario_id)
+);
