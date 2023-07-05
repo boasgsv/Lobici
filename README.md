@@ -72,47 +72,48 @@ Para esse projeto, utilizamos o banco de dados MySQL. Os usuários que foram cri
 ~ Administrador (Caso seja usuário mas não seja cliente nem locadora, esse usuário será administrador, capaz de acessar o CRUD de locadora e cliente, capaz de listar todos os clientes e locadoras cadastrados no banco) <br />
 
 Os comandos utilizados para criação do banco foram os seguintes: <br />
+
 USE Lobici; <br />
 
-CREATE TABLE usuario (
-    id INT AUTO_INCREMENT,
-    email VARCHAR(100),
-    senha VARCHAR(20),
-    PRIMARY KEY (id)
-);
+CREATE TABLE usuario ( <br />
+    id INT AUTO_INCREMENT,<br />
+    email VARCHAR(100),<br />
+    senha VARCHAR(20),<br />
+    PRIMARY KEY (id)<br />
+);<br />
 
-CREATE TABLE cliente (
-    usuario_id INT,
-    cpf CHAR(11),
-    nome VARCHAR(50),
-    telefone VARCHAR(20),
-    sexo CHAR(1),
-    data_nascimento DATE,
-    PRIMARY KEY (usuario_id),
-    FOREIGN KEY(usuario_id) REFERENCES usuario(id),
-    UNIQUE (cpf)
-);
+CREATE TABLE cliente (<br />
+    usuario_id INT,<br />
+    cpf CHAR(11),<br />
+    nome VARCHAR(50),<br />
+    telefone VARCHAR(20),<br />
+    sexo CHAR(1),<br />
+    data_nascimento DATE,<br />
+    PRIMARY KEY (usuario_id),<br />
+    FOREIGN KEY(usuario_id) REFERENCES usuario(id),<br />
+    UNIQUE (cpf)<br />
+);<br />
 
-CREATE TABLE locadora (
-    usuario_id INT,
-    cnpj CHAR(14),
-    nome VARCHAR(50),
-    cidade VARCHAR(20),
-    PRIMARY KEY (usuario_id),
-    FOREIGN KEY(usuario_id) REFERENCES usuario(id),
-    UNIQUE(cnpj)
-);
+CREATE TABLE locadora (<br />
+    usuario_id INT,<br />
+    cnpj CHAR(14),<br />
+    nome VARCHAR(50),<br />
+    cidade VARCHAR(20),<br />
+    PRIMARY KEY (usuario_id),<br />
+    FOREIGN KEY(usuario_id) REFERENCES usuario(id),<br />
+    UNIQUE(cnpj)<br />
+);<br />
 
-CREATE TABLE locacao (
-    id INT AUTO_INCREMENT,
-    locadora_id INT,
-    cliente_id INT,
-    datahora DATETIME,
-    PRIMARY KEY(id),
-    UNIQUE(locadora_id, datahora),
-    UNIQUE(cliente_id,  datahora),
-    FOREIGN KEY (locadora_id) REFERENCES locadora(usuario_id),
-    FOREIGN KEY (cliente_id) REFERENCES cliente(usuario_id)
-);
+CREATE TABLE locacao (<br />
+    id INT AUTO_INCREMENT,<br />
+    locadora_id INT,<br />
+    cliente_id INT,<br />
+    datahora DATETIME,<br />
+    PRIMARY KEY(id),<br />
+    UNIQUE(locadora_id, datahora),<br />
+    UNIQUE(cliente_id,  datahora),<br />
+    FOREIGN KEY (locadora_id) REFERENCES locadora(usuario_id),<br />
+    FOREIGN KEY (cliente_id) REFERENCES cliente(usuario_id)<br />
+);<br />
 
 ## Checklist e divisão de funcionalidades
