@@ -131,8 +131,8 @@ R3: <br />
     Divisão na implementação da funcionalidade: Leandro (100%) <br />
 
 R4: <br />
-    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
-    Divisão na implementação da funcionalidade: Gabriele (100%) <br />
+    ( ) Implementado ( ) Parcialmente implementado (X) Não implementado <br />
+    Divisão na implementação da funcionalidade: <br />
 
 R5: <br />
     (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
