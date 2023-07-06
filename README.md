@@ -133,7 +133,7 @@ CREATE TABLE locacao (<br />
 
 R1: <br />
     (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
-    Divisão na implementação da funcionalidade: Matheus (Controller, DAO e Views), Marcos e Gabriele (Login), Gabriele (Autorização e Integração) <br />
+    Divisão na implementação da funcionalidade: Matheus (Controller, DAO e Views), Marcos (Login e CRUD interno de usuário), Gabriele (Autorização e Integração) <br />
 
 R2: <br />
     (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
