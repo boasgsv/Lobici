@@ -144,8 +144,8 @@ R3: <br />
     Divisão na implementação da funcionalidade: Leandro (DAO), Marcos (Login e CRUD interno de usuário), Gabriele (Controller, Views e Integração com Login)<br />
 
 R4: <br />
-    ( ) Implementado ( ) Parcialmente implementado (X) Não implementado <br />
-    Divisão na implementação da funcionalidade:  <br />
+    (X) Implementado ( ) Parcialmente implementado ( ) Não implementado <br />
+    Divisão na implementação da funcionalidade:  Gabriele (100%) <br />
     
 
 R5: <br />
